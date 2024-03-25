@@ -3,7 +3,7 @@ from textBrief.components.data_ingestion import DataIngestion
 from textBrief.logging import logger
 
 
-class DataIngestionPipeline:
+class DataIngestionTrainingPipeline:
     def __init__(self):
         pass
     
