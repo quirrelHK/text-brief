@@ -1,7 +1,8 @@
 from textBrief.constants import *
 from textBrief.utils.common import read_yaml, create_directories
 from textBrief.entity import (DataIngestionConfig,
-                              DataValidationConfig)
+                              DataValidationConfig,
+                              DataTransformationConfig)
 
 class ConfigurationManager:
     def __init__(self,
@@ -35,3 +36,15 @@ class ConfigurationManager:
         )
         
         return data_validation_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+        create_directories([config.root_dir])
+        
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            tokenizer_path=config.tokenizer_name
+        )
+        
+        return data_transformation_config
