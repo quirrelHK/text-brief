@@ -1,0 +1,9 @@
+version: '3'
+services:
+  text_api:
+    build: .
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/usr/src/app:ro
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
