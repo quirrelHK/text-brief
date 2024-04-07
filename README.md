@@ -1,1 +1,27 @@
 # Text Brief
+A backend API for summarizing text, this API uses SOTA Pegasus model for summarizing text, which is a transformer model.![Link](https://huggingface.co/docs/transformers/en/model_doc/pegasus)
+
+## This API has two routes
+
+1. Train route:\
+    From training the model on new data. Performs data ingestion, data validation and data trainsformation. And then trains and evaluates the model.
+2. Predict route:\
+    Input text is given to the model using this route, the summary of the given text is returned as a response.
+    
+    
+## Clone this repo and cd into the folder
+```bash
+git https://github.com/quirrelHK/text-brief.git
+
+cd text-brief
+```
+
+## Install the requirements
+```bash
+ python setup.py
+```
+
+## Run the app
+```bash
+uvicorn app:app --reload
+```
