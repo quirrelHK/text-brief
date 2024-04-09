@@ -3,6 +3,7 @@ import sys
 import uvicorn
 from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
 from fastapi.responses import Response
 from textBrief.pipeline.prediction import PredictionPipeline
@@ -41,6 +42,14 @@ The stage has been set.
 """
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 @app.get("/", tags=["authentication"])
 async def index():
