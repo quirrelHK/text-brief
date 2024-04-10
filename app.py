@@ -68,7 +68,7 @@ async def predict_route(text):
     try:
         obj = PredictionPipeline()
         summary = obj.predict(text)
-        return summary
+        return Response(summary["summary_text"])
     except Exception as e:
         raise e
     
