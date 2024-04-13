@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { 
+    Container,
+    Button,
+    Typography,
+    Skeleton,
+    Stack
+} from "@mui/material";
+import Textarea from '@mui/joy/Textarea';
+
+
 import api from './api';
 
 
@@ -20,25 +29,30 @@ const App = () => {
     };
 
     return (
-        <div>
-            <h1>Text Summarizer</h1>
-            <textarea
-                rows="10"
-                cols="50"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
+        <Container>
+            <Typography variant="h2" className="heading">Text Summarizer</Typography>
+            <Textarea
                 placeholder="Enter text here..."
-            ></textarea>
-            <br />
-            <button onClick={handleSubmit}>Summarize</button>
-            <h2>Summary</h2>
+                required
+                sx={{ mb: 1 }}
+                onChange={(e) => setText(e.target.value)}
+            />
+            <Button onClick={handleSubmit} variant="contained">Summarize</Button>
+
+            <Typography variant="h3" className="summary">Summary</Typography>
 
             {loading ? (
-                <p>Loading...</p>
+                <Stack>
+                    <Skeleton variant="circular" width={40} height={40} />
+                    <Skeleton />
+                    <Skeleton animation="wave" />
+                    <Skeleton animation="wave" variant="rectangular" height={240}/>
+                </Stack>
             ) : summary ? (
-                <p>{summary}</p>
-            ) : null}
-        </div>
+                <Typography variant="body1">{ summary }</Typography>
+            ):null}
+
+        </Container>
     );
 
 }
