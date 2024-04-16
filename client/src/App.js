@@ -4,7 +4,8 @@ import {
     Button,
     Typography,
     Skeleton,
-    Stack
+    Stack,
+    TextField
 } from "@mui/material";
 import Textarea from '@mui/joy/Textarea';
 
@@ -36,11 +37,9 @@ const App = () => {
                 required
                 sx={{ mb: 1 }}
                 onChange={(e) => setText(e.target.value)}
+
             />
             <Button onClick={handleSubmit} variant="contained">Summarize</Button>
-
-            <Typography variant="h3" className="summary">Summary</Typography>
-
             {loading ? (
                 <Stack>
                     <Skeleton variant="circular" width={40} height={40} />
@@ -49,7 +48,10 @@ const App = () => {
                     <Skeleton animation="wave" variant="rectangular" height={240}/>
                 </Stack>
             ) : summary ? (
-                <Typography variant="body1">{ summary }</Typography>
+                <Stack>
+                    <Typography variant="h3" className="summary">Summary</Typography>
+                    <Typography variant="p">{ summary }</Typography>
+                </Stack>
             ):null}
 
         </Container>
