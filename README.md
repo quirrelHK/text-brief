@@ -12,10 +12,10 @@ A backend API for summarizing text, this API uses SOTA Pegasus model for summari
 ![API Endpoints](https://github.com/quirrelHK/text-brief/blob/main/media/api_endpoint.png)
 
 ### Text to summarize
-![API Endpoints](https://github.com/quirrelHK/text-brief/blob/main/media/input.png)
+![Input](https://github.com/quirrelHK/text-brief/blob/main/media/input.png)
 
 ### Summarize text
-![API Endpoints](https://github.com/quirrelHK/text-brief/blob/main/media/output.png)
+![Output](https://github.com/quirrelHK/text-brief/blob/main/media/output.png)
 
 ## Clone this repo and cd into the folder
 ```bash
