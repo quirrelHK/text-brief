@@ -8,7 +8,15 @@ A backend API for summarizing text, this API uses SOTA Pegasus model for summari
 2. Predict route:\
     Input text is given to the model using this route, the summary of the given text is returned as a response.
     
-    
+### API endpoints
+![API Endpoints](https://github.com/quirrelHK/text-brief/blob/main/media/api_endpoint.png)
+
+### Text to summarize
+![API Endpoints](https://github.com/quirrelHK/text-brief/blob/main/media/input.png)
+
+### Summarize text
+![API Endpoints](https://github.com/quirrelHK/text-brief/blob/main/media/output.png)
+
 ## Clone this repo and cd into the folder
 ```bash
 git https://github.com/quirrelHK/text-brief.git
